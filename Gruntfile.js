@@ -185,6 +185,13 @@ module.exports = function (grunt) {
             sass: {
                 src: ['<%= yeoman.app %>/**/*.{scss,sass}'],
                 ignorePath: /(\.\.\/){1,2}bower_components\//
+            },
+            options: {
+                overrides: {
+                    "colors": {
+                        "main": "sass/colors.scss"
+                    }
+                }
             }
         },
 
