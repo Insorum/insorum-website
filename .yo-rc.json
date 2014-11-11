@@ -1,0 +1,9 @@
+{
+  "generator-angularjs-silex": {
+    "appname": "InsorumWebsite",
+    "namespace": "Insorum\\Website\\",
+    "author": "Insorum",
+    "srcfolder": "app",
+    "distfolder": "public_html"
+  }
+}
