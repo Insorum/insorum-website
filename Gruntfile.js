@@ -92,6 +92,10 @@ module.exports = function (grunt) {
                                 '/bower_components',
                                 connect.static('./bower_components')
                             ),
+                            connect().use(
+                                '/external',
+                                connect.static(appConfig.dist + '/external')
+                            ),
                             connect.static(appConfig.app)
                         ];
                     }
@@ -150,8 +154,7 @@ module.exports = function (grunt) {
                         src: [
                             '.tmp',
                             '<%= yeoman.dist %>/**/*',
-                            '!<%= yeoman.dist %>/backups/**',
-                            '!<%= yeoman.dist %>/render/**'
+                            '!<%= yeoman.dist %>/external/**'
                         ]
                     }
                 ]
