@@ -12,7 +12,7 @@ angular.module('InsorumWebsiteApp')
 
         $scope.fetchingStatus = 'in progress';
 
-        $http.get('/data/whitelist.json').success(function(data) {
+        $http.get('/external/whitelist.json').success(function(data) {
             $scope.whitelist = data;
             $scope.fetchingStatus = 'complete';
         }).error(function() {
