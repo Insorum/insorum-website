@@ -10,5 +10,11 @@ angular.module('InsorumWebsiteApp', ['ui.router'])
                 url: '/',
                 templateUrl: 'components/Homepage/Homepage.html',
                 controller: 'HomepageCtrl'
+            })
+
+            .state('map', {
+                url: '/map',
+                templateUrl: 'components/Map/Map.html',
+                controller: 'MapCtrl'
             });
     });
