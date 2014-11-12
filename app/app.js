@@ -16,5 +16,11 @@ angular.module('InsorumWebsiteApp', ['ui.router'])
                 url: '/map',
                 templateUrl: 'components/Map/Map.html',
                 controller: 'MapCtrl'
+            })
+
+            .state('whitelist', {
+                url: '/whitelist',
+                templateUrl: 'components/Whitelist/Whitelist.html',
+                controller: 'WhitelistCtrl'
             });
     });
