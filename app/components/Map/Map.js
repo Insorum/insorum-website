@@ -8,7 +8,13 @@
  * Controller in InsorumWebsite
  */
 angular.module('InsorumWebsiteApp')
-    .controller('MapCtrl', function ($scope, $http) {
+    .controller('MapCtrl', function ($scope, $location, $stateParams) {
 
-        //TODO update URL with URL path in the iframe
+        $scope.baseURL = '/external/render';
+
+        $scope.mapParams = angular.copy($stateParams);
+
+        $scope.$watch('mapParams', function(newValue) {
+            $location.search(newValue);
+        });
     });
