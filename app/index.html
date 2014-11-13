@@ -31,34 +31,35 @@
             <img src="images/icon.png" alt="logo">
             <h1>Insorum</h1>
         </section>
+
+        <nav class="navbar">
+            <div class="nav-item" ui-sref-active="active">
+                <span>
+                    <i class="fa fa-youtube"></i> Youtube
+                </span>
+            </div>
+            <div class="nav-item" ui-sref-active="active" ui-sref="map">
+                <span>
+                    <i class="fa fa-map-marker"></i> Map
+                </span>
+            </div>
+            <div class="nav-item" ui-sref-active="active">
+                <span>
+                    <i class="fa fa-cloud-upload"></i> Backups
+                </span>
+            </div>
+            <div class="nav-item" ui-sref-active="active" ui-sref="whitelist">
+                <span>
+                    <i class="fa fa-user"></i> Whitelist
+                </span>
+            </div>
+            <div class="nav-item" ui-sref-active="active" ui-sref="home">
+                <span>
+                    <i class="fa fa-info-circle"></i> About
+                </span>
+            </div>
+        </nav>
     </header>
-    <nav class="navbar">
-        <div class="nav-item" ui-sref-active="active">
-            <span>
-                <i class="fa fa-youtube"></i> Youtube
-            </span>
-        </div>
-        <div class="nav-item" ui-sref-active="active" ui-sref="map">
-            <span>
-                <i class="fa fa-map-marker"></i> Map
-            </span>
-        </div>
-        <div class="nav-item" ui-sref-active="active">
-            <span>
-                <i class="fa fa-cloud-upload"></i> Backups
-            </span>
-        </div>
-        <div class="nav-item" ui-sref-active="active" ui-sref="whitelist">
-            <span>
-                <i class="fa fa-user"></i> Whitelist
-            </span>
-        </div>
-        <div class="nav-item" ui-sref-active="active" ui-sref="home">
-            <span>
-                <i class="fa fa-info-circle"></i> About
-            </span>
-        </div>
-    </nav>
     <div class="route-wrapper">
         <section ui-view="" class="route-container"></section>
     </div>
