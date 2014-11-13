@@ -8,26 +8,21 @@ $fa-font-path: "../bower_components/font-awesome/fonts"
 *, *:before, *:after
     box-sizing: border-box
 
+$small-screen-min: 581px
+$small-screen-max: 580px
 $off-black: #1A1A1A
 
 body, html
     height: 100%
+    width: 100%
 
 body
     margin: 0
     text-align: center
-    background-color: $off-black
     font-family: "Open Sans", sans-serif
     color: $silver
-
-.background-image
-    background: url(/images/bg.jpg) no-repeat center center fixed
+    background: $off-black url(/images/bg.jpg) no-repeat center center fixed
     background-size: cover
-    filter: blur(3px)
-    position: absolute
-    width: 100%
-    height: 100%
-    z-index: -1
 
 .page-wrapper
     height: 100%
@@ -36,22 +31,28 @@ body
 nav.navbar
     width: 100%
     margin-top: 15px
-    padding-top: 8px
-    padding-bottom: 8px
     border-top: 1px $silver dashed
     border-bottom: 1px $silver dashed
     background-color: $off-black
-    display: flex
-    align-items: center
-    justify-content: space-around
+
+    @media screen and (min-width: $small-screen-min)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+    @media screen and (max-width: $small-screen-max)
+        margin-bottom: 15px
 
     .nav-item
         width: 100%
-        height: 100%
-        display: flex
-        align-items: center
-        justify-content: center
-        .cl-effect-1 a::before,
+        padding-top: 8px
+        padding-bottom: 8px
+
+        @media screen and (min-width: $small-screen-min)
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 100%
 
         &:after, &:before
             display: inline-block
@@ -81,12 +82,14 @@ nav.navbar
             transform: translateX(0px)
 
 header.header
-    height: 25%
     width: 100%
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-direction: column
+
+    @media screen and (min-width: $small-screen-min)
+        height: 25%
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
 
     .page-title
         display: flex
@@ -95,10 +98,13 @@ header.header
         font-size: 2.2rem
         letter-spacing: -1px
         font-weight: 700
-        border-top: 1px $silver dashed
+
         border-bottom: 1px $silver dashed
         background-color: $off-black
         width: 100%
+
+        @media screen and (min-width: $small-screen-min)
+            border-top: 1px $silver dashed
 
         img
             height: 2.2rem
@@ -109,18 +115,37 @@ header.header
             margin-bottom: 10px
 
 .route-wrapper
-    height: 75%
     width: 100%
-    display: flex
-    align-items: center
-    justify-content: center
 
     .route-container
-        width: 75%
-        height: 75%
-        border: 1px $silver dashed
         background-color: $off-black
 
+    @media screen and (min-width: $small-screen-min)
+        height: 75%
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .route-container
+            width: 75%
+            height: 75%
+            border: 1px $silver dashed
+
+    @media screen and (max-width: $small-screen-max)
+        position: relative
+
+        &:before
+            content: ""
+            display: block
+            padding-top: 66%
+
+        .route-container
+            border-top: 1px $silver dashed
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
 
 @import components/Map/Map
 @import components/Homepage/Homepage
