@@ -4,7 +4,9 @@
         <i class="fa fa-spinner fa-spin"></i> Loading...
     </div>
     <div ng-switch-when="complete" class="whitelist-picker">
-        <img ng-repeat="member in whitelist" ng-src="https://avatar.oc.tc/{{member.name}}/20" alt="{{member.name}}" title="{{member.name}}"/>
+        <div ng-repeat="member in whitelist" class="whitelist-image">
+            <img ng-src="https://avatar.oc.tc/{{member.name}}" alt="{{member.name}}" title="{{member.name}}"/>
+        </div>
     </div>
     <div ng-switch-when="failed">
         Failed to load data from the server.
