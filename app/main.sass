@@ -119,6 +119,8 @@ header.header
 
     .route-container
         background-color: $off-black
+        border-top: 1px $silver dashed
+        border-bottom: 1px $silver dashed
 
     @media screen and (min-width: $small-screen-min)
         height: 75%
@@ -130,22 +132,6 @@ header.header
             width: 75%
             height: 75%
             border: 1px $silver dashed
-
-    @media screen and (max-width: $small-screen-max)
-        position: relative
-
-        &:before
-            content: ""
-            display: block
-            padding-top: 66%
-
-        .route-container
-            border-top: 1px $silver dashed
-            position: absolute
-            top: 0
-            left: 0
-            bottom: 0
-            right: 0
 
 @import components/Map/Map
 @import components/Homepage/Homepage
