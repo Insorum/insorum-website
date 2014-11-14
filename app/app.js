@@ -13,10 +13,9 @@ angular.module('InsorumWebsiteApp', ['ui.router'])
             })
 
             .state('map', {
-                url: '/map?x&y&z&zoom&world&maptype',
+                url: '/map',
                 templateUrl: 'components/Map/Map.html',
-                controller: 'MapCtrl',
-                reloadOnSearch: false
+                controller: 'MapCtrl'
             })
 
             .state('whitelist', {
