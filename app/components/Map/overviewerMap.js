@@ -8,7 +8,7 @@
  * Directive in the InsorumWebsite.
  */
 angular.module('InsorumWebsiteApp')
-    .directive('overviewerMap', function ($interval) {
+    .directive('overviewerMap', function () {
         return {
             templateUrl: '/components/Map/OverviewerMap.html',
             scope: {
@@ -54,7 +54,7 @@ angular.module('InsorumWebsiteApp')
                             world: parts[4],
                             mapType: parts[5]
                         };
-                    })
+                    });
                 };
 
                 iframe.onload = function() {

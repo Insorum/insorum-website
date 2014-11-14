@@ -191,8 +191,8 @@ module.exports = function (grunt) {
             },
             options: {
                 overrides: {
-                    "colors": {
-                        "main": "sass/colors.scss"
+                    'colors': {
+                        'main': 'sass/colors.scss'
                     }
                 }
             }

@@ -8,4 +8,4 @@
  * Controller in InsorumWebsite
  */
 angular.module('InsorumWebsiteApp')
-    .controller('HomepageCtrl', function ($scope, $http) {});
+    .controller('HomepageCtrl', function () {});
