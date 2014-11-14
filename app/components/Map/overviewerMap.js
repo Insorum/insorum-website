@@ -29,19 +29,11 @@ angular.module('InsorumWebsiteApp')
                 var iframe = element.find('iframe')[0];
                 iframe.src = scope.baseUrl + '/#/' + coordsArray.join('/');
 
-                // TODO digest loop doesnt seem to run to update the watcher if we dont force it
-                $interval(function(){}, 1000);
+                var childWindow = iframe.contentWindow;
 
-                iframe.onload = function() {
-                    scope.location = iframe.contentWindow.location;
-                };
-
-                scope.$watch('location.hash', function(newValue) {
-                    if(!newValue || newValue.length === 0) {
-                        return;
-                    }
-
-                    //check existance of the hashslash
+                var updateHash = function() {
+                    var newValue = childWindow.location.hash;
+                    console.log(newValue);
                     if(newValue.slice(0, 2) !== '#/') {
                         return;
                     }
@@ -53,15 +45,21 @@ angular.module('InsorumWebsiteApp')
                         return;
                     }
 
-                    scope.mapParams = {
-                        x: parts[0],
-                        y: parts[1],
-                        z: parts[2],
-                        zoom: parts[3],
-                        world: parts[4],
-                        mapType: parts[5]
-                    };
-                });
+                    scope.$apply(function() {
+                        scope.mapParams = {
+                            x: parts[0],
+                            y: parts[1],
+                            z: parts[2],
+                            zoom: parts[3],
+                            world: parts[4],
+                            mapType: parts[5]
+                        };
+                    })
+                };
+
+                iframe.onload = function() {
+                    childWindow.$(childWindow).on('hashchange', updateHash);
+                };
             }
         };
     });
