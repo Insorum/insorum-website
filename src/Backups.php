@@ -18,7 +18,7 @@ class Backups
         $fileList = [];
         foreach($files as $file) {
             array_push($fileList, [
-                'path' => '/public_html/external/backups/' . $file->getRelativePathname(),
+                'path' => '/public_html/external/backups/' . str_replace('\\', '/', $file->getRelativePathname()),
                 'size' => $file->getSize(),
                 'modified' => $file->getMTime()
             ]);
