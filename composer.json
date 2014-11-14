@@ -4,7 +4,8 @@
         "php": ">=5.3.3",
         "silex/silex": "~1.2",
         "igorw/config-service-provider": "~1.2",
-        "symfony/yaml": "~2.5"
+        "symfony/yaml": "~2.5",
+        "symfony/finder": "~2.5"
     },
     "autoload": {
         "psr-4": {

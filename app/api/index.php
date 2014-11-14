@@ -12,5 +12,5 @@ if($environment == 'dev') {
 $app->register(new Igorw\Silex\ConfigServiceProvider(__DIR__ . "/../../config/config_$environment.yml"));
 
 //register API endpoints
-$app->get('/default', 'Insorum\\Website\\Homepage::getDefaultAction');
+$app->get('/backups', 'Insorum\\Website\\Backups::getIndex');
 $app->run();
