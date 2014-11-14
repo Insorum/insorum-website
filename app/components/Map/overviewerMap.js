@@ -33,7 +33,6 @@ angular.module('InsorumWebsiteApp')
 
                 var updateHash = function() {
                     var newValue = childWindow.location.hash;
-                    console.log(newValue);
                     if(newValue.slice(0, 2) !== '#/') {
                         return;
                     }
